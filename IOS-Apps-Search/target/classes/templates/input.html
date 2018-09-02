@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Ios Apps Search</title>
+    <style>
+        .center{
+            position:absolute;
+            left:30%;
+            top:10%;
+        }
+        .center-title{
+            position: absolute;
+            left:40%;
+            top:5%;
+        }
+    </style>
+
+</head>
+<body>
+<div class="center-title" align="center">
+    <p> IOS APPS SEARCH </p>
+</div>
+
+<div class="center" align="center">
+    <form class="form-inline" th:action="@{/search}" th:object="${appSearchRequest}" method="post">
+
+        <div class="input-group">
+            <input type="text" size="40" th:field="*{appSearchName}" name="searchFieldValue" class="form-control" placeholder="Enter app name">
+            <div class="input-group-append">
+                <button class="btn btn-info" type="submit" id="button-addon2">Search</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
